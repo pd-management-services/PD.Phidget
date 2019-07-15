@@ -1,0 +1,53 @@
+﻿<Window x:Class="PD.Phidget.UserInterface.Configurator.View.AddressingInformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:control="clr-namespace:PD.Phidget.UserInterface.Configurator.Control"
+        mc:Ignorable="d"
+        Title="Addressing Information" Width="570" Height="220" Icon="/Image/Pin.png">
+    <DockPanel Margin="10">
+        <StackPanel>
+            <control:CenteredTextBlock IsEnabled="False" Width="425" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" Text="These paramters control what gets opened. You can st these before calling open in your code to ensure you uniquely specify exactly what you want to work with.
+                                        You can mouse over each for more information." />
+            <StackPanel Orientation="Horizontal" Margin="0 5 0 0 ">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <control:PromptLabel Width="160" Content="Device/Hub Serial Number" ToolTip="Serial number of your device or VINT hub the device is connected to." />
+                        <control:CenteredTextBlock Width="100" Text="{Binding DeviceHubSerialNumber}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <control:PromptLabel Width="160" Content="Hub Port" ToolTip="If your device is connected to a VINT hub, this shows the port number that it is plugged into. It will be 0 otherwise." />
+                        <control:CenteredTextBlock Width="100" Text="{Binding HubPort}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <control:PromptLabel Width="160" Content="Device Channel" ToolTip="Thisis the channel on the device that you have opened." />
+                        <control:CenteredTextBlock Width="100" Text="{Binding DeviceChannel}" />
+                    </StackPanel>
+                </StackPanel>
+                <!--<Separator Style="{DynamicResource VerticalSeparatorStyle}" />-->
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <control:PromptLabel Width="160" Content="Is Hub Port Device?" ToolTip="If you are opening a VINT port on your hub as a input/output channel rather than connecting to an external VINT device then this will be true." />
+                        <control:CenteredTextBlock Width="100" Text="{Binding IsHubPortDevice}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <control:PromptLabel Width="160" Content="Channel Class" ToolTip="This is the software class being used by the object you have opened. You can use this to find the functions for the device in the Phidget's API." />
+                        <control:CenteredTextBlock Width="150" Text="{Binding ChannelClass}" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <Separator/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <control:PromptLabel Width="160" Content="Network Server" ToolTip="This is the SSID of the network server you are connecting to if you have opened a remote device." />
+                    <control:CenteredTextBlock Width="100" Text="{Binding NetworkServer}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <control:PromptLabel Width="160" Content="IP Address:Port" ToolTip="This is the IP address and the port of the network server you have connected to if you are connecting to a remote device." />
+                    <control:CenteredTextBlock Width="100" Text="{Binding IPAddressAndPort}" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>
