@@ -112,7 +112,7 @@
 
         public int MaxSpeakerBeepFrequency { get => 8000; }
 
-        public override bool AddPhidget(IPhidgetViewModel viewModel) { return false; }
+        public override bool AddPhidget(IPhidgetViewModel viewModel) { return true; }
 
         public override void ShowMaintenanceWindow() {
             base.ShowMaintenanceWindow();
