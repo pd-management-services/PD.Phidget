@@ -21,29 +21,25 @@
 *.scc
 *.orig
 *.tss
-*.ncrunchproject
-*.ncrunchsolution
-WebEssentials2015-Settings.json
+
 .vs
 [Bb]in
 [Db]ebug*/
 obj/
 [Rr]elease*/
-_ReSharper*/
 [Tt]est[Rr]esult*
 [Bb]uild[Ll]og.*
-*.[Pp]ublish.xml
-source/common/hibernate.cfg.xml
-source/application/PD.UserInterface.Pbj/[Aa]pp.config
-source/application/PD.Workflow/Web.config
-source/common/CommonAssemblyInfo.cs
-local.properties.xml
-build/*
-UnitTestResults.txt
-IntegrationTestResults.txt
-Packages.dgml
-source/application/PD.Services.WebApi/App_Data/XmlDocument.XML
-sample/XamDataChartMVVMBinding/XamDataChartMVVMBinding.zip
-libraries/nhibernateprofiler/log.txt
-*.tmp
 
+# NuGet Packages
+*.nupkg
+# NuGet Symbol Packages
+*.snupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
