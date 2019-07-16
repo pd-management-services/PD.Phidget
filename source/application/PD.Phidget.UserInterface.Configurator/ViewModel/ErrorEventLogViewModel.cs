@@ -19,6 +19,7 @@
                     repeatedLastErrorMessageCount = 0;
                     ErrorMessages += $"{DateTime.Now:MMMM dd, yyyy H:mm:ss tt} - {e.Description}{Environment.NewLine}";
                 } else {
+
                     repeatedLastErrorMessageCount++;
                     if (repeatedLastErrorMessageCount % 100 == 0) {
                         ErrorMessages += $"last message repeated {repeatedLastErrorMessageCount} times{Environment.NewLine}";
