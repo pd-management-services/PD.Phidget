@@ -7,8 +7,7 @@
             return CreateViewModel((dynamic)phidget);
         }
 
-        public IPhidgetViewModel Create(Phidget phidget, bool makeFourTimesThermocouplePhidgetViewModel)
-        {
+        public IPhidgetViewModel Create(Phidget phidget, bool makeFourTimesThermocouplePhidgetViewModel) {
             if (makeFourTimesThermocouplePhidgetViewModel)
                 return CreateViewModel((dynamic)phidget);
 
@@ -16,15 +15,14 @@
         }
 
         IPhidgetViewModel CreateViewModel(TemperatureSensor phidget) {
-                try {
-                    var type = phidget.ThermocoupleType;
-                    return new FourTimesThermocouplePhidgetViewModel(phidget);
-                } catch { }
+            try {
+                var type = phidget.ThermocoupleType;
+                return new FourTimesThermocouplePhidgetViewModel(phidget);
+            } catch { }
             return CreateThermoPhidgetViewModelViewModel(phidget);
         }
-        IPhidgetViewModel CreateThermoPhidgetViewModelViewModel(TemperatureSensor phidget)
-        {
-            if (phidget.ChannelName == "Temperature Sensor (IC)") return new ThermocoupleInputViewModel(phidget);
+
+        IPhidgetViewModel CreateThermoPhidgetViewModelViewModel(TemperatureSensor phidget) {
             if (phidget.ChannelName == "Thermocouple Input") return new ThermocoupleInputViewModel(phidget);
             return new TemperatureSensorViewModel(phidget);
         }
